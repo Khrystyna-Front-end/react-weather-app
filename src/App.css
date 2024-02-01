@@ -1,38 +1,55 @@
 .App {
   text-align: center;
+  /* border: 1px solid rgb(204, 201, 201); */
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App .circle {
+  background: lightblue;
+  border-radius: 50%;
+  width: 350px;
+  height: 350px;
+  float: left;
+  margin: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App .form {
+  position: relative;
+  top: 40px;
+  left: 30px;
+}
+.App .descCity {
+  position: relative;
+  top: 60px;
+  text-align: left;
+  left: 50px;
+}
+.App .icon {
+  z-index: 100;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App .oneWeatherBubble,
+.App .twoWeatherBubble,
+.App .thirdWeatherBubble,
+.App .fourWeatherBubble,
+.App .fiveWeatherBubble {
+  background: lightblue;
+  border-radius: 50%;
+  width: 145px;
+  height: 145px;
+  float: left;
+  margin: 20px;
+  color: rgb(87, 88, 90);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App .oneWeatherBubble:hover,
+.App .twoWeatherBubble:hover,
+.App .thirdWeatherBubble:hover,
+.App .fourWeatherBubble:hover,
+.App .fiveWeatherBubble:hover,
+.App .circle:hover {
+  color: rgb(10, 10, 10);
+  transform: scale(1.1);
+  z-index: 2;
 }

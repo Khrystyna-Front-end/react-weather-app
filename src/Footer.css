@@ -1,0 +1,8 @@
+.footer-text {
+  color: blueviolet;
+  font-size: 15px;
+  position: absolute;
+  top: 630px;
+  left: 400px;
+  display: inline-block;
+}
