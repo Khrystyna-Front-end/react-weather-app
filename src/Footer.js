@@ -12,8 +12,11 @@ export default function Footer() {
         >
           Khrystyna Karieva
         </a>{" "}
-        and is <a href="/">open-sourced on GitHub</a> and{" "}
-        <a href="/">hosted on Netlify</a>{" "}
+        and is{" "}
+        <a href="https://github.com/Khrystyna-Front-end/react-weather-app">
+          open-sourced on GitHub
+        </a>{" "}
+        and <a href="/">hosted on Netlify</a>{" "}
       </p>
     </div>
   );
