@@ -8,6 +8,7 @@ export default function Footer() {
         This project was codded by{" "}
         <a
           href="https://www.linkedin.com/in/khrystyna-karieva-53aa5215a/"
+          rel="noreferrer"
           target="_blank"
         >
           Khrystyna Karieva
