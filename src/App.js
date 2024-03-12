@@ -3,6 +3,7 @@ import axios from "axios";
 import Header from "./Header";
 import DateOfWeather from "./DateOfWeather";
 import TemperatureOfDay from "./TemperatureOfDay";
+import WeatherDailyForecast from "./WeatherForecast"
 import Footer from "./Footer";
 
 import "./App.css";
@@ -25,7 +26,10 @@ export default function App(props) {
     setWeather({
       city: response.data.name,
       country: response.data.sys.country,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
+      // latitude: response.data.
+
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
@@ -69,7 +73,7 @@ export default function App(props) {
             <div className="row">
               <div className="col-4">
                 {" "}
-                <img src={weather.iconUrl} alt="Weather Icon" />
+                <img src={weather.iconUrl} alt={weather.description} />
               </div>
               <div className="col-8">
                 <TemperatureOfDay temperature={weather.temperature} />
@@ -77,23 +81,7 @@ export default function App(props) {
             </div>
           </div>
         </div>
-        <ul className="weatherBubble">
-          <li className="oneWeatherBubble">
-            1 the above example, I don't specify the radius of the circle.
-          </li>
-          <li className="twoWeatherBubble">
-            2 the above example, I don't specify the radius of the circle.
-          </li>
-          <li className="thirdWeatherBubble">
-            3 the above example, I don't specify the radius of the circle.
-          </li>
-          <li className="fourWeatherBubble">
-            4 the above example, I don't specify the radius of the circle.
-          </li>
-          <li className="fiveWeatherBubble">
-            5 the above example, I don't specify the radius of the circle.
-          </li>
-        </ul>
+        <WeatherDailyForecast coordinates={weather.coordinates} />
         <div className="row">
           <Footer />
         </div>

@@ -28,13 +28,15 @@
 .App .icon {
   z-index: 100;
 }
-
-.App .oneWeatherBubble,
-.App .twoWeatherBubble,
+.App .weatherBubble{
+  list-style: none;
+}
+.App .firstWeatherBubble,
+.App .secondWeatherBubble,
 .App .thirdWeatherBubble,
 .App .fourWeatherBubble,
 .App .fiveWeatherBubble {
-  background: lightblue;
+  background: rgb(223, 241, 247);
   border-radius: 50%;
   width: 145px;
   height: 145px;
@@ -43,8 +45,8 @@
   color: rgb(87, 88, 90);
 }
 
-.App .oneWeatherBubble:hover,
-.App .twoWeatherBubble:hover,
+.App .firstWeatherBubble:hover,
+.App .secondWeatherBubble:hover,
 .App .thirdWeatherBubble:hover,
 .App .fourWeatherBubble:hover,
 .App .fiveWeatherBubble:hover,
