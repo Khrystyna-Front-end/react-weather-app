@@ -5,7 +5,7 @@ export default function TemperatureOfDay(props) {
   let cels = Math.round(props.temperature);
 
   let [fahr, setFahr] = useState(null);
-  //   let [cels, setCels] = useState(temp);
+ 
 
   function changeToCelsius(event) {
     event.preventDefault();
