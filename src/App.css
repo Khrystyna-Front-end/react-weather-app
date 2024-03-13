@@ -4,12 +4,30 @@
   max-width: 800px;
   margin: 0 auto;
 }
+.App .nameApp {
+  color: grey;
+}
+.App .nameCity {
+  color: grey;
+  font-size: 36px;
+}
+.App .country {
+  color: rgb(148, 146, 146);
+}
+.App .day {
+  color: grey;
+  font-weight: 700;
+}
 
+.App .temperatureCurrent {
+  position: relative;
+  bottom: 30px;
+}
 .App .circle {
   background: lightblue;
   border-radius: 50%;
-  width: 350px;
-  height: 350px;
+  width: 385px;
+  height: 375px;
   float: left;
   margin: 20px;
 }
@@ -21,14 +39,14 @@
 }
 .App .descCity {
   position: relative;
-  top: 60px;
+  top: 44px;
   text-align: left;
   left: 50px;
 }
 .App .icon {
   z-index: 100;
 }
-.App .weatherBubble{
+.App .weatherBubble {
   list-style: none;
 }
 .App .firstWeatherBubble,
@@ -54,4 +72,10 @@
   color: rgb(10, 10, 10);
   transform: scale(1.1);
   z-index: 2;
+}
+.App .temperatures {
+  padding-top: 5px;
+  color: rgb(161, 119, 201);
+  background-color: rgb(252, 252, 252);
+  border-radius: 35%;
 }

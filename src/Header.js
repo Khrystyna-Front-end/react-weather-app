@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function Header() {
-  return <h1>Weather app</h1>;
+  return <h1 className="nameApp">Weather app</h1>;
 }

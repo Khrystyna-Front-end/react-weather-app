@@ -4,25 +4,24 @@ import { WeatherSvg } from "weather-icons-animated";
 
 export default function WeatherIcon(props) {
   const icon = {
-    "01d": "sunny",
-    "01n": "clear-night",
-    "02d": "partlycloudy",
-    "02n": "cloudy",
-    "03d": "cloudy",
-    "03n": "cloudy",
-    "04d" :"cloudy",
-    "04n"	: "cloudy",
-    "09d": "pouring",
-    "09n": "pouring",
-    "10d": "rainy",
-    "10n": "rainy",
-    "11d": "lightning-rainy",
-    "11n": "lightning-rainy",
-    "13d": "snowy",
-    "13n": "snowy",
-    "50d": "fog",
-    "50n": "fog",
+    "clear-sky-day": "sunny",
+    "clear-sky-night": "clear-night",
+    "snow-day": "snowy",
+    "snow-night": "snowy",
+    "mist-day": "fog",
+    "mist-night": "fog",
+    "shower-rain-day": "pouring",
+    "shower-rain-night": "pouring",
+    "thunderstorm-day": "lightning-rainy",
+    "thunderstorm-night": "lightning-rainy",
+    "rain-day": "rainy",
+    "rain-night": "rainy",
+    "few-clouds-day": "partlycloudy",
+    "few-clouds-night": "cloudy",
+    "scattered-clouds-day": "cloudy",
+    "scattered-clouds-night": "cloudy",
+    "broken-clouds-day": "cloudy",
+    "broken-clouds-night": "cloudy",
   };
-  return <WeatherSvg state={icon[props.code]} width={200} height={100} />;
+  return <WeatherSvg state={icon[props.code]} width={80} height={80} />;
 }
-

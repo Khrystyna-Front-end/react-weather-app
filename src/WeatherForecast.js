@@ -1,28 +1,57 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import axios from "axios";
 // import { AnimatedWeatherIcon } from "animated-weather-icon";
 // import WeatherIcon from "./WeatherIcon";
 import WeatherDailyForecast from "./WeatherDailyForecast"
 
 function WeatherForecast(props){ 
+  let [loaded, setLoaded] = useState(false);
+  let [forecast, setForecast] = useState(null);
+
     function answer(response){
-    //     let lon = response.data.coordinates.lon;
-    //     let lat = response.data.coordinates.lat;
-        console.log(response.data)
-    };
-    let lon = props.coordinates.lon;
-    let lat = props.coordinates.lat;
+      console.log(response.data.daily[0].temperature.maximum)
+           setLoaded(true);
+     setForecast(response.data.daily);
+              };
 
-    let apikey = "a7f427b104404074749a9da54347acc6";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apikey}`;
+useEffect(()=>{
+setLoaded(false);
+},[props.coordinates])
+if(loaded){
+  console.log(forecast);
+  
 
-axios.get(apiUrl).then(answer);
+ <div className="WeatherForecast">
+        <div className="row">
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 5) {
+              return (
+                <div className="col" key={index}>
+                  <WeatherDailyForecast data={dailyForecast} />
+                </div>
+              );
+            }
+          })}
+        </div>
+  </div>
 
-    return (
-      <>
-       <WeatherDailyForecast/>
-      </>
-    );
+    //  <>
+    //    <WeatherDailyForecast data={forecast} />
+  
+    //  </>
+
+} else {
+    let lon = props.coordinates.longitude;
+ 
+    let lat = props.coordinates.latitude;
+    let apikey = "tbcc1fc8b6424a08899o39e326e00cc3";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apikey}`;
+
+
+    axios.get(apiUrl).then(answer);
+      return null;
+}
+   
 }
 
 export default WeatherForecast;

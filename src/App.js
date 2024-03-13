@@ -3,7 +3,7 @@ import axios from "axios";
 import Header from "./Header";
 import DateOfWeather from "./DateOfWeather";
 import TemperatureOfDay from "./TemperatureOfDay";
-import WeatherDailyForecast from "./WeatherForecast"
+import WeatherForecast from "./WeatherForecast"
 import Footer from "./Footer";
 
 import "./App.css";
@@ -23,23 +23,23 @@ export default function App(props) {
   }
 
   function showWeather(response) {
+    console.log(response)
     setWeather({
-      city: response.data.name,
-      country: response.data.sys.country,
-      coordinates: response.data.coord,
-      temperature: response.data.main.temp,
-      // latitude: response.data.
-
-      date: new Date(response.data.dt * 1000),
-      description: response.data.weather[0].description,
-      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      city: response.data.city,
+      country: response.data.country,
+      coordinates: response.data.coordinates,
+      temperature: response.data.temperature.current,
+      date: new Date(response.data.time * 1000),
+      description: response.data.condition.description,
+      iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+      ,
     });
     setLoaded(true);
   }
 
   function search() {
-    let apiKey = `a7f427b104404074749a9da54347acc6`;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric
+    let apiKey = `tbcc1fc8b6424a08899o39e326e00cc3`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric
 `;
     axios.get(apiUrl).then(showWeather);
   }
@@ -66,11 +66,12 @@ export default function App(props) {
 
           <div className="descCity">
             <h1 className="nameCity">
-              {weather.city} {weather.country}
+              {weather.city} <br />
+              <h5 className="country">{weather.country}</h5>
             </h1>
             <DateOfWeather date={weather.date} />
             <p>{weather.description}</p>
-            <div className="row">
+            <div className="row temperatureCurrent">
               <div className="col-4">
                 {" "}
                 <img src={weather.iconUrl} alt={weather.description} />
@@ -81,7 +82,10 @@ export default function App(props) {
             </div>
           </div>
         </div>
-        <WeatherDailyForecast coordinates={weather.coordinates} />
+        <WeatherForecast
+          coordinates={weather.coordinates}
+          // temperature={weather.temperature}
+        />
         <div className="row">
           <Footer />
         </div>
