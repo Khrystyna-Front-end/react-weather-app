@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  /* border: 1px solid rgb(204, 201, 201); */
   max-width: 800px;
   margin: 0 auto;
 }
@@ -79,3 +78,4 @@
   background-color: rgb(252, 252, 252);
   border-radius: 35%;
 }
+

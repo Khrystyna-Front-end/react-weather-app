@@ -5,7 +5,6 @@ import DateOfWeather from "./DateOfWeather";
 import TemperatureOfDay from "./TemperatureOfDay";
 import WeatherForecast from "./WeatherForecast"
 import Footer from "./Footer";
-
 import "./App.css";
 
 export default function App(props) {
@@ -84,7 +83,6 @@ export default function App(props) {
         </div>
         <WeatherForecast
           coordinates={weather.coordinates}
-          // temperature={weather.temperature}
         />
         <div className="row">
           <Footer />

@@ -18,22 +18,22 @@ useEffect(()=>{
 setLoaded(false);
 },[props.coordinates])
 if(loaded){
-  console.log(forecast);
-  
-
- <div className="WeatherForecast">
-        <div className="row">
-          {forecast.map(function (dailyForecast, index) {
-            if (index < 5) {
-              return (
-                <div className="col" key={index}>
-                  <WeatherDailyForecast data={dailyForecast} />
-                </div>
-              );
-            }
-          })}
-        </div>
-  </div>
+ return (
+   <div className="WeatherForecast">
+    
+       {forecast.map(function (dailyForecast, index) {
+         if (index < 5) {
+           return (
+             <div className="dailyForecast" key={index}>
+               <WeatherDailyForecast data={dailyForecast} />
+             </div>
+           );
+         }
+         return null;
+       })}
+   
+   </div>
+ );
 
     //  <>
     //    <WeatherDailyForecast data={forecast} />

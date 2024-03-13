@@ -2,11 +2,12 @@ import React from "react";
 
 import WeatherIcon from "./WeatherIcon";
 
-function WeatherDailyForecast(props, index) {
+
+function WeatherDailyForecast(props) {
   console.log(props.data);
   function day() {
     let days = ["Sun", "Mon", "Thu", "Wed", "Thu", "Fri", "Sat"];
-    let date = new Date(props.data[index].time * 1000);
+    let date = new Date(props.data.time * 1000);
     let day = date.getDay();
     console.log(date);
     console.log(day);
@@ -15,11 +16,11 @@ function WeatherDailyForecast(props, index) {
     return days[day];
   }
   function maxTemp() {
-    let temperature = Math.round(props.data[index].temperature.maximum);
+    let temperature = Math.round(props.data.temperature.maximum);
     return `${temperature}°C`;
   }
   function minTemp() {
-    let temperature = Math.round(props.data[index].temperature.minimum);
+    let temperature = Math.round(props.data.temperature.minimum);
     return `${temperature}°C`;
   }
   return (
@@ -28,7 +29,7 @@ function WeatherDailyForecast(props, index) {
         <div>
           <p className="day">{day()}</p>
           <p>
-            <WeatherIcon code={props.data[index].condition.icon} />
+            <WeatherIcon code={props.data.condition.icon} />
           </p>
           <div className="temperatures">
             {" "}
