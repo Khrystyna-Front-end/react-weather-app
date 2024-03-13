@@ -1,5 +1,4 @@
 import React from "react";
-
 import { WeatherSvg } from "weather-icons-animated";
 
 export default function WeatherIcon(props) {
