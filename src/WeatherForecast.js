@@ -8,7 +8,6 @@ function WeatherForecast(props){
 
 function answer(response){
 setLoaded(true);
-console.log(response.data);
 setForecast(response.data.daily);
               };
 

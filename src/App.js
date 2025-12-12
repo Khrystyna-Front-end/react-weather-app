@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import LanguageSwitcher from "./LanguageSwitcher";
-import { useTranslation } from "react-i18next";
 import Header from "./Header";
 import DateOfWeather from "./DateOfWeather";
 import TemperatureOfDay from "./TemperatureOfDay";
@@ -13,7 +11,6 @@ export default function App(props) {
   let [loaded, setLoaded] = useState(false);
   let [city, setCity] = useState(props.defaultCity);
   let [weather, setWeather] = useState(null);
-  const { t } = useTranslation();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -50,7 +47,6 @@ export default function App(props) {
     return (
       <div className="App ">
         <Header />
-        <LanguageSwitcher />
         <div className="circle mt-5">
           <form className="form form-control row" onSubmit={handleSubmit}>
             <input
@@ -69,8 +65,7 @@ export default function App(props) {
 
           <div className="descCity">
             <h1 className="nameCity">
-              {t(weather.city)}
-               <br />
+              {weather.city} <br />
               <h5 className="country">{weather.country}</h5>
             </h1>
             <DateOfWeather date={weather.date} />
@@ -86,7 +81,9 @@ export default function App(props) {
             </div>
           </div>
         </div>
-        <WeatherForecast coordinates={weather.coordinates} />
+        <WeatherForecast
+          coordinates={weather.coordinates}
+        />
         <div className="row">
           <Footer />
         </div>
