@@ -1,7 +1,6 @@
 // src/LanguageSwitcher.jsx
 import React from "react";
 import { useTranslation } from "react-i18next";
-import "./LanguageSwitcher.css";
 
 const LanguageSwitcher = () => {
   // Отримуємо функцію 't' для перекладу та функцію 'i18n' для управління мовою
